@@ -1,0 +1,103 @@
+ext.versions = [
+
+        'app'    : [
+                gradle    : '3.4.1',
+                kotlin    : '1.3.31',
+                minSdk    : 23,
+                targetSdk : 28,
+                compileSdk: 28,
+        ],
+
+        'android': [
+                appcompat       : '1.1.0-alpha05',
+                corektx         : '1.1.0-alpha05',
+                lifecycle       : '2.2.0-alpha01',
+                archCore        : '2.1.0-beta01',
+                constraintLayout: '1.1.3',
+                recyclerView    : '1.1.0-alpha05',
+        ],
+
+        'rx'     : [
+                rxJava   : '2.1.12',
+                rxAndroid: '2.1.0',
+                rxKotlin : '2.2.0',
+        ],
+
+        'network': [
+                retrofit     : '2.3.0',
+                rxJavaAdapter: '1.0.0',
+                moshi        : '1.5.0',
+        ],
+
+        'dagger' : '2.22.1',
+
+        'test'   : [
+                jUnit         : '4.12',
+                mockito       : '2.10.0',
+                mockitoKotlin : '2.0.0',
+                espressoCore  : '3.1.1',
+                runnerAndRules: '1.2.0-alpha04'
+        ],
+
+        'util'   : [
+                timber: '4.7.1',
+        ]
+]
+
+ext.deps = [
+        'kotlin' : [
+                stdlib: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.app.kotlin"
+        ],
+
+        'android': [
+                core            : "androidx.core:core-ktx:$versions.android.corektx",
+                appcompat       : "androidx.appcompat:appcompat:$versions.android.appcompat",
+                'lifecycle'     : [
+                        viewModel : "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.android.lifecycle",
+                        extensions: "androidx.lifecycle:lifecycle-extensions:$versions.android.lifecycle",
+                ],
+                'arch'          : [
+                        coreTesting: "androidx.arch.core:core-testing:$versions.android.archCore"
+
+                ],
+                constraintLayout: "androidx.constraintlayout:constraintlayout:$versions.android.constraintLayout",
+                recyclerView    : "androidx.recyclerview:recyclerview:$versions.android.recyclerView"
+        ],
+
+        'rx'     : [
+                java   : "io.reactivex.rxjava2:rxjava:$versions.rx.rxJava",
+                android: "io.reactivex.rxjava2:rxandroid:$versions.rx.rxAndroid",
+                kotlin : "io.reactivex.rxjava2:rxkotlin:$versions.rx.rxKotlin"
+
+        ],
+
+        'network': [
+                retrofit      : "com.squareup.retrofit2:retrofit:$versions.network.retrofit",
+                rxJavaAdapter : "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$versions.network.rxJavaAdapter",
+                moshiConverter: "com.squareup.retrofit2:converter-moshi:$versions.network.retrofit",
+                moshi         : "com.squareup.moshi:moshi-kotlin:$versions.network.moshi"
+        ],
+
+        'dagger' : [
+                'android': [
+                        runtime  : "com.google.dagger:dagger-android:$versions.dagger",
+                        support  : "com.google.dagger:dagger-android-support:$versions.dagger",
+                        processor: "com.google.dagger:dagger-android-processor:$versions.dagger"
+                ],
+                runtime  : "com.google.dagger:dagger:$versions.dagger",
+                compiler : "com.google.dagger:dagger-compiler:$versions.dagger"
+        ],
+
+        'test'   : [
+                junit        : "junit:junit:$versions.test.jUnit",
+                mockitoCore  : "org.mockito:mockito-core:$versions.test.mockito",
+                mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.test.mockitoKotlin",
+                espressoCore : "androidx.test.espresso:espresso-core:$versions.test.espressoCore",
+                rules        : "androidx.test:rules:$versions.test.runnerAndRules",
+                runner       : "androidx.test:runner:$versions.test.runnerAndRules"
+        ],
+
+        'util'   : [
+                timber: "com.jakewharton.timber:timber:$versions.util.timber"
+        ]
+]
