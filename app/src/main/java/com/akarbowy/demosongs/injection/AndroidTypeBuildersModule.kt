@@ -1,16 +1,7 @@
 package com.akarbowy.demosongs.injection
 
-import com.akarbowy.demosongs.MainActivity
-import com.akarbowy.songs.data.DataModule
+import com.akarbowy.songs.ui.SongsBuilderModule
 import dagger.Module
-import dagger.android.ContributesAndroidInjector
-import javax.inject.Singleton
 
-@Module
-abstract class AndroidTypeBuildersModule {
-
-    @Singleton
-    @ContributesAndroidInjector(modules = [DataModule::class])
-    abstract fun bindActivity(): MainActivity
-}
-
+@Module(includes = [SongsBuilderModule::class])
+abstract class AndroidTypeBuildersModule

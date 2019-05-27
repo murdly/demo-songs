@@ -1,0 +1,20 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion versions.app.compileSdk
+    defaultConfig {
+        minSdkVersion versions.app.minSdk
+        targetSdkVersion versions.app.targetSdk
+    }
+}
+
+dependencies {
+    implementation deps.kotlin.stdlib
+
+    implementation deps.rx.java
+    implementation deps.rx.android
+
+    implementation deps.test.junit
+}

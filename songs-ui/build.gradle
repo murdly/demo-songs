@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion versions.app.compileSdk
+    defaultConfig {
+        minSdkVersion versions.app.minSdk
+        targetSdkVersion versions.app.targetSdk
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation project(path: ':domain')
+
+    implementation project(path: ':common-injection')
+
+    implementation project(path: ':utils-rx')
+
+    implementation project(path: ':songs-data')
+
+    implementation deps.kotlin.stdlib
+    implementation deps.android.appcompat
+    implementation deps.android.core
+    implementation deps.android.lifecycle.extensions
+    implementation deps.android.constraintLayout
+    implementation deps.android.recyclerView
+
+    implementation deps.dagger.runtime
+    kapt deps.dagger.compiler
+    implementation deps.dagger.android.runtime
+    implementation deps.dagger.android.support
+    kapt deps.dagger.android.processor
+
+    implementation deps.rx.java
+    implementation deps.rx.android
+    implementation deps.rx.kotlin
+
+    implementation deps.util.timber
+
+    androidTestImplementation deps.test.rules
+    androidTestImplementation deps.test.runner
+    androidTestImplementation deps.test.espressoCore
+    androidTestImplementation deps.test.mockitoKotlin
+
+    testImplementation deps.test.junit
+    testImplementation deps.test.mockitoKotlin
+    testImplementation deps.android.arch.coreTesting
+}

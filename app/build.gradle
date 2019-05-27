@@ -26,8 +26,13 @@ android {
 
 dependencies {
     implementation project(path: ':domain')
-    implementation project(path: ':songs-data')
+
+    implementation project(path: ':common-injection')
+
     implementation project(path: ':utils-resources')
+
+    implementation project(path: ':songs-data')
+    implementation project(path: ':songs-ui')
 
     implementation deps.kotlin.stdlib
     implementation deps.android.appcompat
@@ -38,4 +43,6 @@ dependencies {
     implementation deps.dagger.android.runtime
     implementation deps.dagger.android.support
     kapt deps.dagger.android.processor
+
+    implementation deps.util.timber
 }

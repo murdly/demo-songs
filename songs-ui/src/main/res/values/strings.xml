@@ -1,0 +1,14 @@
+<resources>
+    <string name="error_title">Oops</string>
+    <string name="error_message">Keep calm and try again</string>
+    <string name="error_retry">Retry</string>
+
+    <string name="empty_message">Listen to the voice in your head</string>
+    <string name="empty_title">No songs</string>
+
+    <string name="filter_all_songs">All songs</string>
+    <string name="filter_remote_songs">Remote</string>
+    <string name="filter_local_songs">Local</string>
+
+    <string name="song_subtitle"> • %1$s</string>
+</resources>

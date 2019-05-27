@@ -9,10 +9,13 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/common-injection" />
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/songs-data" />
+            <option value="$PROJECT_DIR$/songs-ui" />
             <option value="$PROJECT_DIR$/utils-date" />
             <option value="$PROJECT_DIR$/utils-resources" />
+            <option value="$PROJECT_DIR$/utils-rx" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

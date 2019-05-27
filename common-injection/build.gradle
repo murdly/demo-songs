@@ -1,0 +1,23 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion versions.app.compileSdk
+    defaultConfig {
+        minSdkVersion versions.app.minSdk
+        targetSdkVersion versions.app.targetSdk
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+}
+
+dependencies {
+    implementation deps.kotlin.stdlib
+
+    implementation deps.dagger.runtime
+    kapt deps.dagger.compiler
+
+    implementation deps.android.lifecycle.viewModel
+}

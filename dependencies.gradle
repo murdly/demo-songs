@@ -33,7 +33,6 @@ ext.versions = [
 
         'test'   : [
                 jUnit         : '4.12',
-                mockito       : '2.10.0',
                 mockitoKotlin : '2.0.0',
                 espressoCore  : '3.1.1',
                 runnerAndRules: '1.2.0-alpha04'
@@ -90,7 +89,6 @@ ext.deps = [
 
         'test'   : [
                 junit        : "junit:junit:$versions.test.jUnit",
-                mockitoCore  : "org.mockito:mockito-core:$versions.test.mockito",
                 mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.test.mockitoKotlin",
                 espressoCore : "androidx.test.espresso:espresso-core:$versions.test.espressoCore",
                 rules        : "androidx.test:rules:$versions.test.runnerAndRules",

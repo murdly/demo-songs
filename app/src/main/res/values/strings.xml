@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Demo Songs</string>
+    <string name="go_to_songs">Go to songs</string>
 </resources>

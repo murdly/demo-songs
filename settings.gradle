@@ -1,3 +1,11 @@
-include ':app', ':utils-date', ':utils-resources',
+include ':app',
         ':domain',
+
+        ':common-injection',
+
+        ':utils-date',
+        ':utils-resources',
+        ':utils-rx',
+
+        ':songs-ui',
         ':songs-data'
