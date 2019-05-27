@@ -1,20 +1,17 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
-apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android' //todo kotlin plugin is calling variant.getPackageLibrary() issue: https://youtrack.jetbrains.com/issue/KT-30784
 
 apply plugin: 'kotlin-kapt'
-
-apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion versions.app.compileSdk
     defaultConfig {
-        applicationId "com.akarbowy.demosongs"
         minSdkVersion versions.app.minSdk
         targetSdkVersion versions.app.targetSdk
-        versionCode 1
-        versionName "1.0"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -26,16 +23,17 @@ android {
 
 dependencies {
     implementation project(path: ':domain')
-    implementation project(path: ':songs-data')
+    implementation project(path: ':utils-date')
     implementation project(path: ':utils-resources')
 
-    implementation deps.kotlin.stdlib
-    implementation deps.android.appcompat
-    implementation deps.android.constraintLayout
+    api deps.network.retrofit
+    api deps.network.rxJavaAdapter
+    api deps.network.moshi
+    api deps.network.moshiConverter
 
     implementation deps.dagger.runtime
     kapt deps.dagger.compiler
-    implementation deps.dagger.android.runtime
-    implementation deps.dagger.android.support
-    kapt deps.dagger.android.processor
+
+    testImplementation deps.test.junit
+    testImplementation deps.test.mockitoKotlin
 }
