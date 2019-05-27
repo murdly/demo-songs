@@ -1,0 +1,12 @@
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation deps.kotlin.stdlib
+    implementation deps.rx.java
+
+    testImplementation deps.test.junit
+    testImplementation deps.test.mockitoKotlin
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
